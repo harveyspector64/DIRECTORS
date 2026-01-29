@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directors Packaging Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">Tradition Pictures / Solution Ent Group</div>
+      <h1>Directors Packaging Board</h1>
+      <p>
+        A modern corkboard for packaging: filter directors by creative fit, commercial
+        profile, and deal readiness. Build a project and map the best-fit bucket.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel" aria-labelledby="project-title">
+        <div class="panel-header">
+          <h2 id="project-title">Project Brief</h2>
+          <p>Capture the first-principles packaging logic before the list search begins.</p>
+        </div>
+        <form id="project-form">
+          <div class="grid">
+            <label>
+              Project Name
+              <input type="text" name="name" placeholder="Action comedy, working title" required />
+            </label>
+            <label>
+              Budget Range
+              <select name="budget">
+                <option value="">Select</option>
+                <option value="&lt;$10M">Under $10M</option>
+                <option value="$10-30M">$10-30M</option>
+                <option value="$30-60M">$30-60M</option>
+                <option value="$60M+">$60M+</option>
+              </select>
+            </label>
+            <label>
+              Genre Blend
+              <input type="text" name="genre" placeholder="Action comedy, thriller" />
+            </label>
+            <label>
+              Cast Profile
+              <select name="cast">
+                <option value="">Select</option>
+                <option value="Ensemble">Ensemble</option>
+                <option value="Movie star">Movie star</option>
+                <option value="Breakout">Breakout talent</option>
+                <option value="International">International drivers</option>
+              </select>
+            </label>
+            <label>
+              Tone + Vibe
+              <input type="text" name="tone" placeholder="High energy, prestige, grounded" />
+            </label>
+            <label>
+              Presales Likelihood
+              <select name="presales">
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit">Add Project</button>
+            <button type="button" id="clear-projects">Clear Projects</button>
+          </div>
+        </form>
+        <div class="project-list" aria-live="polite"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="filter-title">
+        <div class="panel-header">
+          <h2 id="filter-title">Director Buckets</h2>
+          <p>Start with a strategic lens — then drill into the list.</p>
+        </div>
+        <div class="filters">
+          <label>
+            Budget Tier
+            <select id="filter-budget">
+              <option value="">All</option>
+              <option value="&lt;$10M">Under $10M</option>
+              <option value="$10-30M">$10-30M</option>
+              <option value="$30-60M">$30-60M</option>
+              <option value="$60M+">$60M+</option>
+            </select>
+          </label>
+          <label>
+            Genre Focus
+            <select id="filter-genre">
+              <option value="">All</option>
+              <option value="Action">Action</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Drama">Drama</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+              <option value="Family">Family</option>
+            </select>
+          </label>
+          <label>
+            Cast Profile
+            <select id="filter-cast">
+              <option value="">All</option>
+              <option value="Ensemble">Ensemble</option>
+              <option value="Movie star">Movie star</option>
+              <option value="Breakout">Breakout talent</option>
+              <option value="International">International drivers</option>
+            </select>
+          </label>
+          <label>
+            Tone
+            <select id="filter-tone">
+              <option value="">All</option>
+              <option value="High energy">High energy</option>
+              <option value="Grounded">Grounded</option>
+              <option value="Prestige">Prestige</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Stylized">Stylized</option>
+            </select>
+          </label>
+          <label>
+            Track Record
+            <select id="filter-track">
+              <option value="">All</option>
+              <option value="Rising">Rising</option>
+              <option value="Established">Established</option>
+              <option value="Veteran">Veteran</option>
+            </select>
+          </label>
+          <label>
+            Presales Readiness
+            <select id="filter-presales">
+              <option value="">All</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+        </div>
+        <div class="results">
+          <div class="results-header">
+            <h3>Matches</h3>
+            <span id="match-count">0</span>
+          </div>
+          <div id="director-list" class="director-list" role="list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Built for internal packaging decisions. Replace sample data with live director
+        research updates.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -16,6 +16,7 @@ const clearProjectsBtn = document.getElementById("clear-projects");
 const clearFiltersBtn = document.getElementById("clear-filters");
 const searchInput = document.getElementById("search-input");
 const sortSelect = document.getElementById("sort-select");
+const dataStamp = document.getElementById("data-stamp");
 
 const state = {
   projects: [],
@@ -29,6 +30,21 @@ const tokenize = (value) =>
     .map((token) => token.trim())
     .filter(Boolean);
 
+const buildOptions = (values) =>
+  Array.from(new Set(values.filter(Boolean))).sort((a, b) => a.localeCompare(b));
+
+const populateSelect = (select, options) => {
+  const baseOption = select.querySelector("option");
+  select.innerHTML = "";
+  select.appendChild(baseOption);
+  options.forEach((option) => {
+    const opt = document.createElement("option");
+    opt.value = option;
+    opt.textContent = option;
+    select.appendChild(opt);
+  });
+};
+
 const computeMatchScore = (director, project) => {
   if (!project) {
     return 0;
@@ -40,7 +56,18 @@ const computeMatchScore = (director, project) => {
 
   if (project.budget && director.budgetTier === project.budget) score += 2;
   if (project.presales && director.presalesReadiness === project.presales) score += 2;
-  if (project.priority && director.packagingLeverage === "High") score += 1;
+  if (project.priority === "Commercial heat" && director.packagingLeverage === "High") {
+    score += 2;
+  }
+  if (project.priority === "Awards potential" && director.awards.includes("Oscar")) {
+    score += 2;
+  }
+  if (
+    project.priority === "International presales" &&
+    ["Strong", "Very strong"].includes(director.internationalAppeal)
+  ) {
+    score += 2;
+  }
 
   genreTokens.forEach((token) => {
     if (director.genres.some((genre) => genre.toLowerCase().includes(token))) {
@@ -77,7 +104,8 @@ const renderDirectors = () => {
       const searchMatch =
         !searchValue ||
         director.name.toLowerCase().includes(searchValue) ||
-        director.knownFor.some((title) => title.toLowerCase().includes(searchValue));
+        director.knownFor.some((title) => title.toLowerCase().includes(searchValue)) ||
+        director.awards.toLowerCase().includes(searchValue);
 
       return (
         budgetMatch &&
@@ -121,6 +149,10 @@ const renderDirectors = () => {
     card.className = "director-card";
     card.setAttribute("role", "listitem");
 
+    const sourceLinks = director.sources
+      .map((source) => `<a href=\"${source}\" target=\"_blank\" rel=\"noreferrer\">Source</a>`)
+      .join(" ");
+
     card.innerHTML = `
       <div class="director-header">
         <h4>${director.name}</h4>
@@ -144,6 +176,7 @@ const renderDirectors = () => {
         <span class="tag">Intl: ${director.internationalAppeal}</span>
         <span class="tag">Availability: ${director.availability}</span>
       </div>
+      <div class="source-links">${sourceLinks}</div>
     `;
 
     listEl.appendChild(card);
@@ -216,9 +249,30 @@ clearProjectsBtn.addEventListener("click", () => {
   renderDirectors();
 });
 
+const hydrateFilters = () => {
+  populateSelect(filters.budget, buildOptions(state.directors.map((d) => d.budgetTier)));
+  populateSelect(
+    filters.genre,
+    buildOptions(state.directors.flatMap((d) => d.genres))
+  );
+  populateSelect(filters.tone, buildOptions(state.directors.flatMap((d) => d.tone)));
+  populateSelect(filters.track, buildOptions(state.directors.map((d) => d.trackRecord)));
+  populateSelect(
+    filters.leverage,
+    buildOptions(state.directors.map((d) => d.packagingLeverage))
+  );
+  populateSelect(
+    filters.presales,
+    buildOptions(state.directors.map((d) => d.presalesReadiness))
+  );
+  populateSelect(filters.scale, buildOptions(state.directors.map((d) => d.scale)));
+};
+
 const loadDirectors = async () => {
   const response = await fetch("directors.json");
   state.directors = await response.json();
+  hydrateFilters();
+  dataStamp.textContent = `Director data: ${state.directors.length} entries loaded`;
   renderDirectors();
 };
 

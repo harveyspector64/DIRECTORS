@@ -268,6 +268,21 @@ button[type="button"] {
   color: var(--muted);
 }
 
+.source-links {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.source-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.source-links a:hover {
+  text-decoration: underline;
+}
+
 footer {
   max-width: 1040px;
   margin: 32px auto 0;

@@ -11,8 +11,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Grounded intensity and credibility for action-driven prestige projects."
+    "availability": "Unknown",
+    "notes": "Grounded intensity and credibility for action-driven prestige projects.",
+    "sources": ["https://en.wikipedia.org/wiki/Kathryn_Bigelow"]
   },
   {
     "name": "Denis Villeneuve",
@@ -26,8 +27,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Very strong",
-    "availability": "Booked out",
-    "notes": "Top-tier for premium sci-fi or large-scale prestige with global presales leverage."
+    "availability": "Unknown",
+    "notes": "Top-tier for premium sci-fi or large-scale prestige with global presales leverage.",
+    "sources": ["https://en.wikipedia.org/wiki/Denis_Villeneuve"]
   },
   {
     "name": "Greta Gerwig",
@@ -41,8 +43,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Strong voice and cultural signal for bold studio comedies and prestige-driven stories."
+    "availability": "Unknown",
+    "notes": "Distinct voice with broad audience resonance and strong talent relationships.",
+    "sources": ["https://en.wikipedia.org/wiki/Greta_Gerwig"]
   },
   {
     "name": "Ryan Coogler",
@@ -56,8 +59,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Very strong",
-    "availability": "By inquiry",
-    "notes": "High-impact storytelling with strong talent relationships and franchise credibility."
+    "availability": "Unknown",
+    "notes": "High-impact storytelling with franchise credibility and strong collaboration track.",
+    "sources": ["https://en.wikipedia.org/wiki/Ryan_Coogler"]
   },
   {
     "name": "Ava DuVernay",
@@ -71,8 +75,9 @@
     "packagingLeverage": "Medium",
     "presalesReadiness": "Medium",
     "internationalAppeal": "Moderate",
-    "availability": "By inquiry",
-    "notes": "Strong cultural relevance and prestige positioning; excels with true stories."
+    "availability": "Unknown",
+    "notes": "Strong cultural relevance and prestige positioning; excels with true stories.",
+    "sources": ["https://en.wikipedia.org/wiki/Ava_DuVernay"]
   },
   {
     "name": "Christopher Nolan",
@@ -86,8 +91,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Very strong",
-    "availability": "Booked out",
-    "notes": "Global box-office driver; rare availability and premium level of leverage."
+    "availability": "Unknown",
+    "notes": "Global box-office driver; premium leverage for high-concept event films.",
+    "sources": ["https://en.wikipedia.org/wiki/Christopher_Nolan"]
   },
   {
     "name": "Jordan Peele",
@@ -101,8 +107,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Signature voice in elevated genre; strong marketing hook and audience awareness."
+    "availability": "Unknown",
+    "notes": "Signature voice in elevated genre; strong marketing hook and audience awareness.",
+    "sources": ["https://en.wikipedia.org/wiki/Jordan_Peele"]
   },
   {
     "name": "Patty Jenkins",
@@ -116,8 +123,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Big-scale action with character focus; can anchor studio franchise packaging."
+    "availability": "Unknown",
+    "notes": "Big-scale action with character focus; studio-franchise credibility.",
+    "sources": ["https://en.wikipedia.org/wiki/Patty_Jenkins"]
   },
   {
     "name": "Gareth Edwards",
@@ -131,8 +139,9 @@
     "packagingLeverage": "Medium",
     "presalesReadiness": "High",
     "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Strong at delivering scope with contained costs; fits FX-heavy action."
+    "availability": "Unknown",
+    "notes": "Scale-forward storytelling with a grounded visual approach.",
+    "sources": ["https://en.wikipedia.org/wiki/Gareth_Edwards_(director)"]
   },
   {
     "name": "Chloé Zhao",
@@ -146,8 +155,9 @@
     "packagingLeverage": "Medium",
     "presalesReadiness": "Medium",
     "internationalAppeal": "Moderate",
-    "availability": "By inquiry",
-    "notes": "Auteur voice with prestige upside; strong for grounded, character-led epics."
+    "availability": "Unknown",
+    "notes": "Auteur voice with prestige upside; strong for grounded, character-led epics.",
+    "sources": ["https://en.wikipedia.org/wiki/Chlo%C3%A9_Zhao"]
   },
   {
     "name": "James Wan",
@@ -161,8 +171,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Very strong",
-    "availability": "By inquiry",
-    "notes": "Versatile across horror-to-tentpole; strong audience recognition."
+    "availability": "Unknown",
+    "notes": "Versatile across horror-to-tentpole; strong audience recognition.",
+    "sources": ["https://en.wikipedia.org/wiki/James_Wan"]
   },
   {
     "name": "David Leitch",
@@ -176,8 +187,9 @@
     "packagingLeverage": "High",
     "presalesReadiness": "High",
     "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Action-comedy tone expert; great for ensemble, high-concept action packages."
+    "availability": "Unknown",
+    "notes": "Action-comedy tone expert; great for ensemble, high-concept action packages.",
+    "sources": ["https://en.wikipedia.org/wiki/David_Leitch"]
   },
   {
     "name": "Olivia Wilde",
@@ -191,23 +203,9 @@
     "packagingLeverage": "Medium",
     "presalesReadiness": "Medium",
     "internationalAppeal": "Moderate",
-    "availability": "By inquiry",
-    "notes": "Voice-driven, talent-friendly; fits contemporary ensemble or dramedy."
-  },
-  {
-    "name": "Ben Affleck",
-    "knownFor": ["Argo", "The Town", "Air"],
-    "genres": ["Thriller", "Drama"],
-    "tone": ["Grounded", "Commercial"],
-    "budgetTier": "$30-60M",
-    "scale": "Studio",
-    "trackRecord": "Established",
-    "awards": "Oscar-winning director",
-    "packagingLeverage": "High",
-    "presalesReadiness": "High",
-    "internationalAppeal": "Strong",
-    "availability": "By inquiry",
-    "notes": "Studio-friendly with talent cachet; strong in true-story and thriller packaging."
+    "availability": "Unknown",
+    "notes": "Voice-driven, talent-friendly; fits contemporary ensemble or dramedy.",
+    "sources": ["https://en.wikipedia.org/wiki/Olivia_Wilde"]
   },
   {
     "name": "Lee Daniels",
@@ -221,8 +219,9 @@
     "packagingLeverage": "Medium",
     "presalesReadiness": "Medium",
     "internationalAppeal": "Moderate",
-    "availability": "By inquiry",
-    "notes": "Strong awards pedigree for character-driven stories."
+    "availability": "Unknown",
+    "notes": "Awards pedigree for character-driven stories.",
+    "sources": ["https://en.wikipedia.org/wiki/Lee_Daniels"]
   },
   {
     "name": "Nia DaCosta",
@@ -236,7 +235,232 @@
     "packagingLeverage": "Medium",
     "presalesReadiness": "Medium",
     "internationalAppeal": "Moderate",
-    "availability": "By inquiry",
-    "notes": "Bridge between prestige and commercial genre; strong visual signature."
+    "availability": "Unknown",
+    "notes": "Bridge between prestige and commercial genre; strong visual signature.",
+    "sources": ["https://en.wikipedia.org/wiki/Nia_DaCosta"]
+  },
+  {
+    "name": "Gina Prince-Bythewood",
+    "knownFor": ["The Woman King", "The Old Guard", "Love & Basketball"],
+    "genres": ["Action", "Drama"],
+    "tone": ["Emotional", "Grounded"],
+    "budgetTier": "$30-60M",
+    "scale": "Studio",
+    "trackRecord": "Established",
+    "awards": "Multiple award nominations",
+    "packagingLeverage": "Medium",
+    "presalesReadiness": "Medium",
+    "internationalAppeal": "Strong",
+    "availability": "Unknown",
+    "notes": "Character-forward action with scale; strong with grounded ensemble pieces.",
+    "sources": ["https://en.wikipedia.org/wiki/Gina_Prince-Bythewood"]
+  },
+  {
+    "name": "Barry Jenkins",
+    "knownFor": ["Moonlight", "If Beale Street Could Talk", "The Underground Railroad"],
+    "genres": ["Drama"],
+    "tone": ["Poetic", "Intimate"],
+    "budgetTier": "$10-30M",
+    "scale": "Prestige",
+    "trackRecord": "Established",
+    "awards": "Oscar-winning director",
+    "packagingLeverage": "Medium",
+    "presalesReadiness": "Medium",
+    "internationalAppeal": "Moderate",
+    "availability": "Unknown",
+    "notes": "Prestige storytelling with strong awards potential; character-first vision.",
+    "sources": ["https://en.wikipedia.org/wiki/Barry_Jenkins"]
+  },
+  {
+    "name": "Luca Guadagnino",
+    "knownFor": ["Call Me by Your Name", "Suspiria", "Challengers"],
+    "genres": ["Drama", "Thriller"],
+    "tone": ["Stylized", "Intimate"],
+    "budgetTier": "$10-30M",
+    "scale": "Prestige",
+    "trackRecord": "Established",
+    "awards": "Oscar-nominated films",
+    "packagingLeverage": "Medium",
+    "presalesReadiness": "Medium",
+    "internationalAppeal": "Strong",
+    "availability": "Unknown",
+    "notes": "Stylized prestige with strong talent relationships and festival presence.",
+    "sources": ["https://en.wikipedia.org/wiki/Luca_Guadagnino"]
+  },
+  {
+    "name": "Bong Joon-ho",
+    "knownFor": ["Parasite", "Snowpiercer", "The Host"],
+    "genres": ["Thriller", "Drama", "Sci-Fi"],
+    "tone": ["Satirical", "Dark", "Elevated"],
+    "budgetTier": "$30-60M",
+    "scale": "Event",
+    "trackRecord": "Veteran",
+    "awards": "Oscar-winning director",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Very strong",
+    "availability": "Unknown",
+    "notes": "Global prestige with strong audience awareness and festival credibility.",
+    "sources": ["https://en.wikipedia.org/wiki/Bong_Joon-ho"]
+  },
+  {
+    "name": "Alfonso Cuarón",
+    "knownFor": ["Gravity", "Children of Men", "Roma"],
+    "genres": ["Drama", "Sci-Fi"],
+    "tone": ["Elevated", "Immersive"],
+    "budgetTier": "$60M+",
+    "scale": "Event",
+    "trackRecord": "Veteran",
+    "awards": "Oscar-winning director",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Very strong",
+    "availability": "Unknown",
+    "notes": "High craft credibility for prestige or large-scale visual storytelling.",
+    "sources": ["https://en.wikipedia.org/wiki/Alfonso_Cuar%C3%B3n"]
+  },
+  {
+    "name": "Paul Greengrass",
+    "knownFor": ["The Bourne Ultimatum", "Captain Phillips", "United 93"],
+    "genres": ["Action", "Thriller", "Drama"],
+    "tone": ["Urgent", "Grounded"],
+    "budgetTier": "$30-60M",
+    "scale": "Studio",
+    "trackRecord": "Veteran",
+    "awards": "Oscar-nominated films",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Strong",
+    "availability": "Unknown",
+    "notes": "High-intensity action-thrillers with authentic realism.",
+    "sources": ["https://en.wikipedia.org/wiki/Paul_Greengrass"]
+  },
+  {
+    "name": "Sam Mendes",
+    "knownFor": ["1917", "Skyfall", "American Beauty"],
+    "genres": ["Drama", "Action"],
+    "tone": ["Prestige", "Emotional"],
+    "budgetTier": "$60M+",
+    "scale": "Event",
+    "trackRecord": "Veteran",
+    "awards": "Oscar-winning director",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Very strong",
+    "availability": "Unknown",
+    "notes": "Prestige visual craftsmanship with proven global box office.",
+    "sources": ["https://en.wikipedia.org/wiki/Sam_Mendes"]
+  },
+  {
+    "name": "Taika Waititi",
+    "knownFor": ["Jojo Rabbit", "Thor: Ragnarok", "Hunt for the Wilderpeople"],
+    "genres": ["Comedy", "Adventure", "Drama"],
+    "tone": ["Quirky", "Heartfelt"],
+    "budgetTier": "$30-60M",
+    "scale": "Studio",
+    "trackRecord": "Established",
+    "awards": "Oscar-winning writer",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Strong",
+    "availability": "Unknown",
+    "notes": "Distinct comedic voice with studio credibility and global audience.",
+    "sources": ["https://en.wikipedia.org/wiki/Taika_Waititi"]
+  },
+  {
+    "name": "Karyn Kusama",
+    "knownFor": ["Jennifer's Body", "The Invitation", "Destroyer"],
+    "genres": ["Thriller", "Horror", "Drama"],
+    "tone": ["Dark", "Psychological"],
+    "budgetTier": "$10-30M",
+    "scale": "Mid-budget",
+    "trackRecord": "Established",
+    "awards": "Festival acclaim",
+    "packagingLeverage": "Medium",
+    "presalesReadiness": "Medium",
+    "internationalAppeal": "Moderate",
+    "availability": "Unknown",
+    "notes": "Character-forward genre with strong indie credibility.",
+    "sources": ["https://en.wikipedia.org/wiki/Karyn_Kusama"]
+  },
+  {
+    "name": "Joseph Kosinski",
+    "knownFor": ["Top Gun: Maverick", "Tron: Legacy", "Oblivion"],
+    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "tone": ["Sleek", "High energy"],
+    "budgetTier": "$60M+",
+    "scale": "Event",
+    "trackRecord": "Established",
+    "awards": "Studio blockbuster success",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Very strong",
+    "availability": "Unknown",
+    "notes": "Large-scale action with technical polish and strong studio relationships.",
+    "sources": ["https://en.wikipedia.org/wiki/Joseph_Kosinski"]
+  },
+  {
+    "name": "Matt Reeves",
+    "knownFor": ["The Batman", "Dawn of the Planet of the Apes", "Cloverfield"],
+    "genres": ["Action", "Thriller", "Sci-Fi"],
+    "tone": ["Dark", "Stylized"],
+    "budgetTier": "$60M+",
+    "scale": "Event",
+    "trackRecord": "Established",
+    "awards": "Franchise success",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Strong",
+    "availability": "Unknown",
+    "notes": "Franchise-capable storyteller with genre intensity.",
+    "sources": ["https://en.wikipedia.org/wiki/Matt_Reeves"]
+  },
+  {
+    "name": "Emerald Fennell",
+    "knownFor": ["Promising Young Woman", "Saltburn"],
+    "genres": ["Drama", "Thriller"],
+    "tone": ["Stylized", "Dark"],
+    "budgetTier": "$10-30M",
+    "scale": "Prestige",
+    "trackRecord": "Rising",
+    "awards": "Oscar-winning writer",
+    "packagingLeverage": "Medium",
+    "presalesReadiness": "Medium",
+    "internationalAppeal": "Moderate",
+    "availability": "Unknown",
+    "notes": "Provocative prestige voice with strong critical profile.",
+    "sources": ["https://en.wikipedia.org/wiki/Emerald_Fennell"]
+  },
+  {
+    "name": "Ridley Scott",
+    "knownFor": ["Gladiator", "Blade Runner", "The Martian"],
+    "genres": ["Sci-Fi", "Drama", "Action"],
+    "tone": ["Epic", "Commercial"],
+    "budgetTier": "$60M+",
+    "scale": "Event",
+    "trackRecord": "Veteran",
+    "awards": "Oscar-winning director",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Very strong",
+    "availability": "Unknown",
+    "notes": "High-output veteran with franchise and prestige credibility.",
+    "sources": ["https://en.wikipedia.org/wiki/Ridley_Scott"]
+  },
+  {
+    "name": "Steven Soderbergh",
+    "knownFor": ["Ocean's Eleven", "Traffic", "Erin Brockovich"],
+    "genres": ["Drama", "Thriller", "Crime"],
+    "tone": ["Cool", "Stylized"],
+    "budgetTier": "Varies",
+    "scale": "Studio prestige",
+    "trackRecord": "Veteran",
+    "awards": "Oscar-winning director",
+    "packagingLeverage": "High",
+    "presalesReadiness": "High",
+    "internationalAppeal": "Strong",
+    "availability": "Unknown",
+    "notes": "Versatile across studio and indie; proven with ensemble crime packages.",
+    "sources": ["https://en.wikipedia.org/wiki/Steven_Soderbergh"]
   }
 ]

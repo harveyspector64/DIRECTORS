@@ -36,6 +36,7 @@
                 <option value="$10-30M">$10-30M</option>
                 <option value="$30-60M">$30-60M</option>
                 <option value="$60M+">$60M+</option>
+                <option value="Varies">Varies</option>
               </select>
             </label>
             <label>
@@ -63,6 +64,7 @@
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
+                <option value="Unknown">Unknown</option>
               </select>
             </label>
           </div>
@@ -100,79 +102,48 @@
             Budget Tier
             <select id="filter-budget">
               <option value="">All</option>
-              <option value="&lt;$10M">Under $10M</option>
-              <option value="$10-30M">$10-30M</option>
-              <option value="$30-60M">$30-60M</option>
-              <option value="$60M+">$60M+</option>
             </select>
           </label>
           <label>
             Genre Focus
             <select id="filter-genre">
               <option value="">All</option>
-              <option value="Action">Action</option>
-              <option value="Comedy">Comedy</option>
-              <option value="Thriller">Thriller</option>
-              <option value="Drama">Drama</option>
-              <option value="Sci-Fi">Sci-Fi</option>
-              <option value="Horror">Horror</option>
-              <option value="Biopic">Biopic</option>
             </select>
           </label>
           <label>
             Tone
             <select id="filter-tone">
               <option value="">All</option>
-              <option value="Grounded">Grounded</option>
-              <option value="Stylized">Stylized</option>
-              <option value="Elevated">Elevated</option>
-              <option value="Commercial">Commercial</option>
-              <option value="Epic">Epic</option>
             </select>
           </label>
           <label>
             Track Record
             <select id="filter-track">
               <option value="">All</option>
-              <option value="Rising">Rising</option>
-              <option value="Established">Established</option>
-              <option value="Veteran">Veteran</option>
             </select>
           </label>
           <label>
             Packaging Leverage
             <select id="filter-leverage">
               <option value="">All</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
             </select>
           </label>
           <label>
             Presales Readiness
             <select id="filter-presales">
               <option value="">All</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
             </select>
           </label>
           <label>
             Scale
             <select id="filter-scale">
               <option value="">All</option>
-              <option value="Event">Event</option>
-              <option value="Studio prestige">Studio prestige</option>
-              <option value="Commercial action">Commercial action</option>
-              <option value="Elevated genre">Elevated genre</option>
-              <option value="Mid-budget">Mid-budget</option>
-              <option value="Prestige">Prestige</option>
             </select>
           </label>
         </div>
         <div class="filters-actions">
           <button type="button" id="clear-filters">Reset Filters</button>
-          <span class="data-stamp">Director data: starter build</span>
+          <span class="data-stamp" id="data-stamp">Director data: loading</span>
         </div>
         <div class="results">
           <div class="results-header">

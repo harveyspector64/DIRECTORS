@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directors Packaging Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">Tradition Pictures / Solution Ent Group</div>
+      <h1>Directors Packaging Board</h1>
+      <p>
+        A modern packaging board to turn first-principles thinking into actionable director
+        buckets. Define the project, surface matches, and pressure-test packaging ideas.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel" aria-labelledby="project-title">
+        <div class="panel-header">
+          <h2 id="project-title">Project Brief</h2>
+          <p>Capture creative, commercial, and deal logic to anchor your search.</p>
+        </div>
+        <form id="project-form">
+          <div class="grid">
+            <label>
+              Project Name
+              <input type="text" name="name" placeholder="Action comedy, working title" required />
+            </label>
+            <label>
+              Budget Range
+              <select name="budget">
+                <option value="">Select</option>
+                <option value="&lt;$10M">Under $10M</option>
+                <option value="$10-30M">$10-30M</option>
+                <option value="$30-60M">$30-60M</option>
+                <option value="$60M+">$60M+</option>
+                <option value="Varies">Varies</option>
+              </select>
+            </label>
+            <label>
+              Genre Blend
+              <input type="text" name="genre" placeholder="Action comedy, thriller" />
+            </label>
+            <label>
+              Tone + Vibe
+              <input type="text" name="tone" placeholder="High energy, grounded, elevated" />
+            </label>
+            <label>
+              Packaging Priority
+              <select name="priority">
+                <option value="">Select</option>
+                <option value="Commercial heat">Commercial heat</option>
+                <option value="Awards potential">Awards potential</option>
+                <option value="International presales">International presales</option>
+                <option value="Strategic relationships">Strategic relationships</option>
+              </select>
+            </label>
+            <label>
+              Presales Sensitivity
+              <select name="presales">
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                <option value="Unknown">Unknown</option>
+              </select>
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit">Add Project</button>
+            <button type="button" id="clear-projects">Clear Projects</button>
+          </div>
+        </form>
+        <div class="project-list" aria-live="polite"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="filter-title">
+        <div class="panel-header">
+          <div>
+            <h2 id="filter-title">Director Buckets</h2>
+            <p>Filter by creative fit, commercial leverage, and deal readiness.</p>
+          </div>
+          <div class="filters-meta">
+            <label>
+              Search
+              <input type="search" id="search-input" placeholder="Director name or film" />
+            </label>
+            <label>
+              Sort
+              <select id="sort-select">
+                <option value="match">Match score</option>
+                <option value="name">Name</option>
+                <option value="leverage">Packaging leverage</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="filters">
+          <label>
+            Budget Tier
+            <select id="filter-budget">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Genre Focus
+            <select id="filter-genre">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Tone
+            <select id="filter-tone">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Track Record
+            <select id="filter-track">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Packaging Leverage
+            <select id="filter-leverage">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Presales Readiness
+            <select id="filter-presales">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Scale
+            <select id="filter-scale">
+              <option value="">All</option>
+            </select>
+          </label>
+        </div>
+        <div class="filters-actions">
+          <button type="button" id="clear-filters">Reset Filters</button>
+          <span class="data-stamp" id="data-stamp">Director data: loading</span>
+        </div>
+        <div class="results">
+          <div class="results-header">
+            <h3>Matches</h3>
+            <span id="match-count">0</span>
+          </div>
+          <div id="director-list" class="director-list" role="list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        The list below is a starter dataset. Expand with your internal intel, availability
+        tracking, and packaging notes to create your true living corkboard.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

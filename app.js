@@ -1,101 +1,11 @@
-const directors = [
-  {
-    name: "Mara Chen",
-    focus: ["Action", "Comedy"],
-    budget: "$30-60M",
-    cast: "Ensemble",
-    tone: "High energy",
-    track: "Established",
-    presales: "High",
-    notes:
-      "Action-comedy specialist with repeat studio partnerships; sharp ensemble timing.",
-  },
-  {
-    name: "Luca Rivera",
-    focus: ["Thriller", "Drama"],
-    budget: "$10-30M",
-    cast: "Breakout",
-    tone: "Grounded",
-    track: "Rising",
-    presales: "Medium",
-    notes:
-      "Grounded thrillers, character-driven; strong with emerging talent packages.",
-  },
-  {
-    name: "Priya Nassar",
-    focus: ["Sci-Fi", "Action"],
-    budget: "$60M+",
-    cast: "Movie star",
-    tone: "Stylized",
-    track: "Veteran",
-    presales: "High",
-    notes:
-      "Big-scale visuals and IP builds; reliable on premium FX budgets.",
-  },
-  {
-    name: "Jonas Holt",
-    focus: ["Comedy", "Family"],
-    budget: "<$10M",
-    cast: "Ensemble",
-    tone: "Commercial",
-    track: "Established",
-    presales: "Medium",
-    notes:
-      "Family-friendly crowd-pleasers with efficient schedules and solid ROI.",
-  },
-  {
-    name: "Selene Park",
-    focus: ["Drama", "Thriller"],
-    budget: "$30-60M",
-    cast: "Movie star",
-    tone: "Prestige",
-    track: "Established",
-    presales: "High",
-    notes:
-      "Awards-friendly prestige meets commercial tension; strong talent pull.",
-  },
-  {
-    name: "Andre Kline",
-    focus: ["Action", "Thriller"],
-    budget: "$60M+",
-    cast: "International",
-    tone: "Commercial",
-    track: "Veteran",
-    presales: "High",
-    notes:
-      "International action footprint; pre-sales anchor in Europe/Asia.",
-  },
-  {
-    name: "Isabella Cortez",
-    focus: ["Comedy", "Drama"],
-    budget: "$10-30M",
-    cast: "Ensemble",
-    tone: "Grounded",
-    track: "Rising",
-    presales: "Low",
-    notes:
-      "Character-led comedies, strong festival profile, lean production style.",
-  },
-  {
-    name: "Ethan North",
-    focus: ["Action", "Sci-Fi"],
-    budget: "$30-60M",
-    cast: "Movie star",
-    tone: "Stylized",
-    track: "Established",
-    presales: "High",
-    notes:
-      "Known for kinetic world-building; top-tier vendors already engaged.",
-  },
-];
-
 const filters = {
   budget: document.getElementById("filter-budget"),
   genre: document.getElementById("filter-genre"),
-  cast: document.getElementById("filter-cast"),
   tone: document.getElementById("filter-tone"),
   track: document.getElementById("filter-track"),
+  leverage: document.getElementById("filter-leverage"),
   presales: document.getElementById("filter-presales"),
+  scale: document.getElementById("filter-scale"),
 };
 
 const listEl = document.getElementById("director-list");
@@ -103,30 +13,101 @@ const matchCount = document.getElementById("match-count");
 const projectForm = document.getElementById("project-form");
 const projectList = document.querySelector(".project-list");
 const clearProjectsBtn = document.getElementById("clear-projects");
+const clearFiltersBtn = document.getElementById("clear-filters");
+const searchInput = document.getElementById("search-input");
+const sortSelect = document.getElementById("sort-select");
 
 const state = {
   projects: [],
+  directors: [],
+};
+
+const tokenize = (value) =>
+  value
+    .toLowerCase()
+    .split(/[,/]/)
+    .map((token) => token.trim())
+    .filter(Boolean);
+
+const computeMatchScore = (director, project) => {
+  if (!project) {
+    return 0;
+  }
+
+  let score = 0;
+  const genreTokens = tokenize(project.genre || "");
+  const toneTokens = tokenize(project.tone || "");
+
+  if (project.budget && director.budgetTier === project.budget) score += 2;
+  if (project.presales && director.presalesReadiness === project.presales) score += 2;
+  if (project.priority && director.packagingLeverage === "High") score += 1;
+
+  genreTokens.forEach((token) => {
+    if (director.genres.some((genre) => genre.toLowerCase().includes(token))) {
+      score += 1;
+    }
+  });
+
+  toneTokens.forEach((token) => {
+    if (director.tone.some((tone) => tone.toLowerCase().includes(token))) {
+      score += 1;
+    }
+  });
+
+  return score;
 };
 
 const renderDirectors = () => {
   listEl.innerHTML = "";
-  const filtered = directors.filter((director) => {
-    const budgetMatch = !filters.budget.value || director.budget === filters.budget.value;
-    const genreMatch =
-      !filters.genre.value || director.focus.includes(filters.genre.value);
-    const castMatch = !filters.cast.value || director.cast === filters.cast.value;
-    const toneMatch = !filters.tone.value || director.tone === filters.tone.value;
-    const trackMatch = !filters.track.value || director.track === filters.track.value;
-    const presalesMatch =
-      !filters.presales.value || director.presales === filters.presales.value;
-    return (
-      budgetMatch && genreMatch && castMatch && toneMatch && trackMatch && presalesMatch
-    );
+  const searchValue = searchInput.value.toLowerCase();
+  const activeProject = state.projects[0];
+
+  const filtered = state.directors
+    .filter((director) => {
+      const budgetMatch = !filters.budget.value || director.budgetTier === filters.budget.value;
+      const genreMatch =
+        !filters.genre.value || director.genres.includes(filters.genre.value);
+      const toneMatch = !filters.tone.value || director.tone.includes(filters.tone.value);
+      const trackMatch = !filters.track.value || director.trackRecord === filters.track.value;
+      const leverageMatch =
+        !filters.leverage.value || director.packagingLeverage === filters.leverage.value;
+      const presalesMatch =
+        !filters.presales.value || director.presalesReadiness === filters.presales.value;
+      const scaleMatch = !filters.scale.value || director.scale === filters.scale.value;
+      const searchMatch =
+        !searchValue ||
+        director.name.toLowerCase().includes(searchValue) ||
+        director.knownFor.some((title) => title.toLowerCase().includes(searchValue));
+
+      return (
+        budgetMatch &&
+        genreMatch &&
+        toneMatch &&
+        trackMatch &&
+        leverageMatch &&
+        presalesMatch &&
+        scaleMatch &&
+        searchMatch
+      );
+    })
+    .map((director) => ({
+      ...director,
+      matchScore: computeMatchScore(director, activeProject),
+    }));
+
+  const sorted = [...filtered].sort((a, b) => {
+    if (sortSelect.value === "name") {
+      return a.name.localeCompare(b.name);
+    }
+    if (sortSelect.value === "leverage") {
+      return b.packagingLeverage.localeCompare(a.packagingLeverage);
+    }
+    return b.matchScore - a.matchScore;
   });
 
-  matchCount.textContent = filtered.length.toString();
+  matchCount.textContent = sorted.length.toString();
 
-  if (filtered.length === 0) {
+  if (sorted.length === 0) {
     const empty = document.createElement("div");
     empty.className = "director-card";
     empty.innerHTML =
@@ -135,24 +116,34 @@ const renderDirectors = () => {
     return;
   }
 
-  filtered.forEach((director) => {
+  sorted.forEach((director) => {
     const card = document.createElement("div");
     card.className = "director-card";
     card.setAttribute("role", "listitem");
 
     card.innerHTML = `
-      <h4>${director.name}</h4>
+      <div class="director-header">
+        <h4>${director.name}</h4>
+        ${activeProject ? `<span class="match-pill">Match ${director.matchScore}</span>` : ""}
+      </div>
+      <div class="filmography">Known for: ${director.knownFor.join(", ")}</div>
       <div class="tag-row">
-        <span class="tag">${director.budget}</span>
-        <span class="tag">${director.cast}</span>
-        <span class="tag">${director.tone}</span>
-        <span class="tag">${director.track}</span>
-        <span class="tag">Presales ${director.presales}</span>
+        <span class="tag">${director.budgetTier}</span>
+        <span class="tag">${director.scale}</span>
+        <span class="tag">${director.trackRecord}</span>
+        <span class="tag">Leverage ${director.packagingLeverage}</span>
+        <span class="tag">Presales ${director.presalesReadiness}</span>
       </div>
       <div class="tag-row">
-        ${director.focus.map((genre) => `<span class=\"tag\">${genre}</span>`).join(" ")}
+        ${director.genres.map((genre) => `<span class=\"tag\">${genre}</span>`).join(" ")}
+        ${director.tone.map((tone) => `<span class=\"tag\">${tone}</span>`).join(" ")}
       </div>
       <p class="director-notes">${director.notes}</p>
+      <div class="tag-row">
+        <span class="tag">${director.awards}</span>
+        <span class="tag">Intl: ${director.internationalAppeal}</span>
+        <span class="tag">Availability: ${director.availability}</span>
+      </div>
     `;
 
     listEl.appendChild(card);
@@ -167,18 +158,20 @@ const renderProjects = () => {
     return;
   }
 
-  state.projects.forEach((project) => {
+  state.projects.forEach((project, index) => {
     const card = document.createElement("div");
     card.className = "project-card";
+    const matchLabel = index === 0 ? "Active project" : "Saved";
     card.innerHTML = `
       <h3>${project.name}</h3>
       <div class="project-meta">
         <span>${project.genre || "Genre: TBD"}</span>
         <span>${project.budget || "Budget: TBD"}</span>
-        <span>${project.cast || "Cast: TBD"}</span>
         <span>${project.tone || "Tone: TBD"}</span>
+        <span>${project.priority || "Priority: TBD"}</span>
         <span>Presales ${project.presales || "TBD"}</span>
       </div>
+      <div class="project-score">${matchLabel}</div>
     `;
     projectList.appendChild(card);
   });
@@ -188,6 +181,18 @@ Object.values(filters).forEach((filter) =>
   filter.addEventListener("change", renderDirectors)
 );
 
+searchInput.addEventListener("input", renderDirectors);
+sortSelect.addEventListener("change", renderDirectors);
+
+clearFiltersBtn.addEventListener("click", () => {
+  Object.values(filters).forEach((filter) => {
+    filter.value = "";
+  });
+  searchInput.value = "";
+  sortSelect.value = "match";
+  renderDirectors();
+});
+
 projectForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(projectForm);
@@ -195,19 +200,27 @@ projectForm.addEventListener("submit", (event) => {
     name: data.get("name"),
     budget: data.get("budget"),
     genre: data.get("genre"),
-    cast: data.get("cast"),
     tone: data.get("tone"),
+    priority: data.get("priority"),
     presales: data.get("presales"),
   };
   state.projects.unshift(project);
   projectForm.reset();
   renderProjects();
+  renderDirectors();
 });
 
 clearProjectsBtn.addEventListener("click", () => {
   state.projects = [];
   renderProjects();
+  renderDirectors();
 });
 
+const loadDirectors = async () => {
+  const response = await fetch("directors.json");
+  state.directors = await response.json();
+  renderDirectors();
+};
+
 renderProjects();
-renderDirectors();
+loadDirectors();
